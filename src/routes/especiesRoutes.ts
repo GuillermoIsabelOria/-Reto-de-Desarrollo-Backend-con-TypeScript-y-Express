@@ -12,10 +12,8 @@ const router: Router = Router();
  */
 router.get('/datos', async (_req: Request, res: Response): Promise<void> => {
   try {
-    // Consultamos la tabla 'especies' y tipamos el resultado
     const [rows] = await pool.query<RowDataPacket[]>('SELECT * FROM especies');
 
-    // Mapeamos los rows a nuestro tipo Especie
     const especies: Especie[] = rows.map((row) => ({
       id: row.id as number,
       nombre: row.nombre as string,

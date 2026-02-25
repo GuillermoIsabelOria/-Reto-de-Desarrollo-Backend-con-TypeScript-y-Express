@@ -1,7 +1,4 @@
-/**
- * Interface que representa una especie de pesca
- * Coincide exactamente con las columnas de la tabla `especies` en MySQL
- */
+
 export interface Especie {
   id: number;
   nombre: string;
