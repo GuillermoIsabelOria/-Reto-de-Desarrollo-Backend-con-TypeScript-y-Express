@@ -5,11 +5,7 @@ import { RowDataPacket } from 'mysql2';
 
 const router: Router = Router();
 
-/**
- * GET /api/datos
- * Devuelve todas las especies de pesca almacenadas en la base de datos.
- * Los resultados están tipados con la interface Especie (sin usar 'any').
- */
+
 router.get('/datos', async (_req: Request, res: Response): Promise<void> => {
   try {
     const [rows] = await pool.query<RowDataPacket[]>('SELECT * FROM especies');
